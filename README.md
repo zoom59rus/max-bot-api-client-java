@@ -26,8 +26,8 @@ Talk to [@MasterBot](http://max.ru/MasterBot). It will helps you to create your 
 To start using this client add it as Maven dependency:
 ```xml
 <dependency>
-    <groupId>ru.oneme</groupId>
-    <artifactId>oneme-bot-api</artifactId>
+    <groupId>ru.max</groupId>
+    <artifactId>max-bot-api</artifactId>
     <version>0.0.6-SNAPSHOT</version>
 </dependency>
 ```
