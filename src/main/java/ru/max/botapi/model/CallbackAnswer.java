@@ -21,10 +21,10 @@
 package ru.max.botapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Objects;
-import javax.validation.Valid;
-
 import org.jetbrains.annotations.Nullable;
+
+import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * Send this object when your bot wants to react to when a button is pressed

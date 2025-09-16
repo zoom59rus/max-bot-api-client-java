@@ -22,11 +22,11 @@ package ru.max.botapi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Objects;
+import org.jetbrains.annotations.Nullable;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-
-import org.jetbrains.annotations.Nullable;
+import java.util.Objects;
 
 /**
  * User

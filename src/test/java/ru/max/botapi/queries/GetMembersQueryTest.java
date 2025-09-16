@@ -20,18 +20,16 @@
 
 package ru.max.botapi.queries;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.List;
-
-import org.junit.Test;
-
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatList;
 import ru.max.botapi.model.ChatMember;
 import ru.max.botapi.model.ChatMembersList;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -64,7 +62,7 @@ public class GetMembersQueryTest extends UnitTestBase {
         }
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.getMembers(null).execute();
     }

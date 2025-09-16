@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.Message;
 
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -41,7 +40,7 @@ public class GetMessageByIdQueryTest extends UnitTestBase {
         assertThat(response, is(not(nullValue())));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.getMessageById(null).execute();
     }

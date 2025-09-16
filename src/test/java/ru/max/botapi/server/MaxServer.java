@@ -3,14 +3,7 @@ package ru.max.botapi.server;
 import ru.max.botapi.client.impl.JacksonSerializer;
 import spark.Spark;
 
-import static spark.Spark.awaitInitialization;
-import static spark.Spark.before;
-import static spark.Spark.delete;
-import static spark.Spark.get;
-import static spark.Spark.halt;
-import static spark.Spark.patch;
-import static spark.Spark.post;
-import static spark.Spark.put;
+import static spark.Spark.*;
 
 
 public class MaxServer {

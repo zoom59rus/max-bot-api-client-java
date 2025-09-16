@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.Chat;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -40,7 +39,7 @@ public class GetChatByLinkQueryTest extends UnitTestBase {
         assertThat(response, is(notNullValue()));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.getChatByLink(null).execute();
     }

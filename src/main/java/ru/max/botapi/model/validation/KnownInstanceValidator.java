@@ -20,10 +20,10 @@
 
 package ru.max.botapi.model.validation;
 
+import ru.max.botapi.model.KnownInstance;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-
-import ru.max.botapi.model.KnownInstance;
 
 public class KnownInstanceValidator implements ConstraintValidator<KnownInstance, Object> {
     private Class<?> clazz;

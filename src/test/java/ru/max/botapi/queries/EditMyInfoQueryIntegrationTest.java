@@ -1,5 +1,14 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.BotCommand;
+import ru.max.botapi.model.BotInfo;
+import ru.max.botapi.model.BotPatch;
+import ru.max.botapi.model.PhotoAttachmentRequestPayload;
+
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -9,17 +18,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicReference;
-
-import javax.imageio.ImageIO;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.model.BotCommand;
-import ru.max.botapi.model.BotInfo;
-import ru.max.botapi.model.BotPatch;
-import ru.max.botapi.model.PhotoAttachmentRequestPayload;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -33,7 +31,7 @@ public class EditMyInfoQueryIntegrationTest extends MaxIntegrationTest {
     private String newDescription;
     private ArrayList<BotCommand> commands;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         originalMe.compareAndSet(null, bot1.getBotInfo());
         newName = "TT Integration Test Bot " + now();

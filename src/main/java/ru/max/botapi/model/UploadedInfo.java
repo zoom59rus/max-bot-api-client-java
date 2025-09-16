@@ -21,8 +21,9 @@
 package ru.max.botapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Objects;
+
 import javax.validation.Valid;
+import java.util.Objects;
 
 
 /**

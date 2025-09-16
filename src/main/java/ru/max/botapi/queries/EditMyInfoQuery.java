@@ -21,7 +21,9 @@
 package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
-import ru.max.botapi.model.BotInfo;import ru.max.botapi.model.BotPatch;
+import ru.max.botapi.model.BotInfo;
+import ru.max.botapi.model.BotPatch;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class EditMyInfoQuery extends MaxQuery<BotInfo> {

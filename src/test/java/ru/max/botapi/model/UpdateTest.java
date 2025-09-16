@@ -1,10 +1,9 @@
 package ru.max.botapi.model;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.TestBot;
-import ru.max.botapi.UnitTest;
 import ru.max.botapi.queries.UnitTestBase;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -12,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 
 
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class UpdateTest extends UnitTestBase {
     long now = System.currentTimeMillis();
     User user = new User(ID_COUNTER.incrementAndGet(), "user", "name", "username", false, System.currentTimeMillis());

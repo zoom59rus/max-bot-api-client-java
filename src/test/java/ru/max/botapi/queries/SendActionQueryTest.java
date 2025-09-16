@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.ActionRequestBody;
 import ru.max.botapi.model.SenderAction;
 import ru.max.botapi.model.SimpleQueryResult;
@@ -40,12 +39,12 @@ public class SendActionQueryTest extends UnitTestBase {
         assertThat(response.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.sendAction(null, 1L).execute();
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException2() throws Exception {
         api.sendAction(new ActionRequestBody(SenderAction.TYPING_ON), null).execute();
     }

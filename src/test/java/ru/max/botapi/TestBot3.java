@@ -1,10 +1,6 @@
 package ru.max.botapi;
 
-import java.util.Collections;
-import java.util.Objects;
-
 import org.jetbrains.annotations.Nullable;
-
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.exceptions.APIException;
 import ru.max.botapi.exceptions.ClientException;
@@ -13,6 +9,9 @@ import ru.max.botapi.model.ChatList;
 import ru.max.botapi.model.NewMessageBody;
 import ru.max.botapi.model.ReplyKeyboardAttachmentRequest;
 import ru.max.botapi.queries.SendMessageQuery;
+
+import java.util.Collections;
+import java.util.Objects;
 
 
 public class TestBot3 extends TestBot {

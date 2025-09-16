@@ -20,14 +20,13 @@
 
 package ru.max.botapi.model;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import ru.max.botapi.model.validation.KnownInstanceValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-
-import ru.max.botapi.model.validation.KnownInstanceValidator;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.TYPE;

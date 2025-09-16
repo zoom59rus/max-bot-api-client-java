@@ -1,7 +1,6 @@
 package ru.max.botapi.model;
 
-import org.junit.Assert;
-
+import org.junit.jupiter.api.Assertions;
 
 public class FailByDefaultUpdateMapper<T> implements Update.Mapper<T> {
 
@@ -67,7 +66,7 @@ public class FailByDefaultUpdateMapper<T> implements Update.Mapper<T> {
     }
 
     private static <T> T fail() {
-        Assert.fail("Should not happens");
+        Assertions.fail("Should not happens");
         return null;
     }
 }

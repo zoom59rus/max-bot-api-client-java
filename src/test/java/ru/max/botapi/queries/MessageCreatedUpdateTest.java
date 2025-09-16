@@ -1,17 +1,11 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
-
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.FailByDefaultUpdateVisitor;
-import ru.max.botapi.model.MessageCreatedUpdate;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.Update;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

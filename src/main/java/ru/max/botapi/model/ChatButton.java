@@ -22,12 +22,12 @@ package ru.max.botapi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Objects;
+import org.jetbrains.annotations.Nullable;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.jetbrains.annotations.Nullable;
+import java.util.Objects;
 
 /**
  * Button that creates new chat as soon as the first user clicked on it. Bot will be added to chat participants as administrator. Message author will be owner of the chat.

@@ -1,8 +1,8 @@
 package ru.max.botapi.queries;
 
-import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

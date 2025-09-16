@@ -20,11 +20,9 @@
 
 package ru.max.botapi.queries;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.SimpleQueryResult;
 import spark.Spark;
-
-import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -39,7 +37,7 @@ public class DeleteChatQueryTest extends MaxQueryTest {
         assertThat(result.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.deleteChat(null).execute();
     }

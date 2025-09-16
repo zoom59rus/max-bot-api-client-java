@@ -22,11 +22,6 @@ package ru.max.botapi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * After pressing this type of button client sends new message with attachment of current user contact

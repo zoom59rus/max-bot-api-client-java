@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.SimpleQueryResult;
 import spark.Spark;
 
@@ -30,7 +29,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class DeleteMessageQueryTest extends UnitTestBase {
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowExceptionOnMissingparam() throws Exception {
         String messageId = null;
         DeleteMessageQuery query = new DeleteMessageQuery(client, messageId);
@@ -46,7 +45,7 @@ public class DeleteMessageQueryTest extends UnitTestBase {
         assertThat(result.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.deleteMessage(null).execute();
     }

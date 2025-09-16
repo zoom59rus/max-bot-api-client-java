@@ -1,20 +1,7 @@
 package ru.max.botapi;
 
-import java.lang.invoke.MethodHandles;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.exceptions.APIException;
 import ru.max.botapi.exceptions.ClientException;
@@ -22,6 +9,14 @@ import ru.max.botapi.model.BotInfo;
 import ru.max.botapi.model.NewMessageBody;
 import ru.max.botapi.model.Update;
 import ru.max.botapi.model.UpdateList;
+
+import java.lang.invoke.MethodHandles;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static ru.max.botapi.MaxIntegrationTest.info;
 

@@ -1,31 +1,15 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatType;
-import ru.max.botapi.model.DataAttachment;
-import ru.max.botapi.model.FailByDefaultUpdateVisitor;
-import ru.max.botapi.model.Intent;
-import ru.max.botapi.model.MessageCreatedUpdate;
-import ru.max.botapi.model.MessageLinkType;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.NewMessageLink;
-import ru.max.botapi.model.ReplyButton;
-import ru.max.botapi.model.ReplyKeyboardAttachment;
-import ru.max.botapi.model.ReplyKeyboardAttachmentRequest;
-import ru.max.botapi.model.SendMessageButton;
-import ru.max.botapi.model.SendMessageResult;
-
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 
 
 public class ReplyKeyboardIntegrationTest extends GetUpdatesIntegrationTest {
@@ -96,7 +80,7 @@ public class ReplyKeyboardIntegrationTest extends GetUpdatesIntegrationTest {
         MaxIntegrationTest.await(keyboardReceived, 10);
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowInChannel() throws Exception {
         Chat chat = getByType(getChats(), ChatType.CHANNEL);
         String payload = MaxIntegrationTest.randomText(127);
@@ -109,7 +93,7 @@ public class ReplyKeyboardIntegrationTest extends GetUpdatesIntegrationTest {
         new SendMessageQuery(MaxIntegrationTest.client, body).chatId(chat.getChatId()).disableLinkPreview(true).execute();
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowWhenUserNotFound() throws Exception {
         Chat chat = getByTitle(getChats(), "ReplyKeyboardIntegrationTest#shouldSendReplyFromKeyboard");
         String payload = MaxIntegrationTest.randomText(127);

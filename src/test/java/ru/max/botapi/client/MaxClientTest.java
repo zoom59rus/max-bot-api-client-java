@@ -1,9 +1,7 @@
 package ru.max.botapi.client;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
-import ru.max.botapi.UnitTest;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.server.MaxService;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -11,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 
 
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class MaxClientTest {
     @Test
     public void shouldObtainEndpointFromEnvironment() {

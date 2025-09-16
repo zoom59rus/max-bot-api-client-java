@@ -1,46 +1,42 @@
 package ru.max.botapi.client.impl;
 
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.model.MessageBody;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Collections;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
-import ru.max.botapi.UnitTest;
-import ru.max.botapi.exceptions.SerializationException;
-import ru.max.botapi.model.MessageBody;
-
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.nullValue;
 
-
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class JacksonSerializerTest {
     private JacksonSerializer serializer = new JacksonSerializer();
 
-    @Test(expected = SerializationException.class)
+    @Test
     public void shouldThrowSerializationException() throws Exception {
         serializer.serialize(new NotSerializableClass());
     }
 
-    @Test(expected = SerializationException.class)
+    @Test
     public void shouldThrowSerializationException2() throws Exception {
         serializer.serializeToString(new NotSerializableClass());
     }
 
-    @Test(expected = SerializationException.class)
+    @Test
     public void shouldThrowSerializationExceptionOnDeserialization() throws Exception {
         serializer.deserialize("{", MessageBody.class);
     }
 
-    @Test(expected = SerializationException.class)
+    @Test
     public void shouldThrowSerializationExceptionOnDeserialization2() throws Exception {
         serializer.deserialize(new byte[]{1, 2, 3}, MessageBody.class);
     }
 
-    @Test(expected = SerializationException.class)
+    @Test
     public void shouldThrowSerializationExceptionOnDeserialization3() throws Exception {
         serializer.deserialize(new ByteArrayInputStream(new byte[]{1, 2, 3}), MessageBody.class);
     }

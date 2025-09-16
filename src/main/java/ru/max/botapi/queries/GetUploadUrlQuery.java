@@ -21,7 +21,9 @@
 package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
-import ru.max.botapi.model.UploadEndpoint;import ru.max.botapi.model.UploadType;
+import ru.max.botapi.model.UploadEndpoint;
+import ru.max.botapi.model.UploadType;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class GetUploadUrlQuery extends MaxQuery<UploadEndpoint> {

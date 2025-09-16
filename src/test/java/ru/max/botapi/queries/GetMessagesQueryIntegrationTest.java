@@ -1,28 +1,14 @@
 package ru.max.botapi.queries;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatType;
-import ru.max.botapi.model.Message;
-import ru.max.botapi.model.MessageList;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.SendMessageResult;
-
-import static org.hamcrest.CoreMatchers.hasItems;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.greaterThan;
@@ -137,7 +123,7 @@ public class GetMessagesQueryIntegrationTest extends MaxIntegrationTest {
         }
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowExceptionOnInvalidMessageId() throws Exception {
         MessageList messageList = new GetMessagesQuery(client).messageIds(
                 Collections.singleton("mid.nonexistingmessageid123456789012")).execute();

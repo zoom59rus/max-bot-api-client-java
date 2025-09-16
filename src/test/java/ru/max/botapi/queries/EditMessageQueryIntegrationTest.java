@@ -1,51 +1,28 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
-import ru.max.botapi.IntegrationTest;
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.model.Attachment;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.CallbackButton;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatType;
-import ru.max.botapi.model.ContactAttachmentRequest;
-import ru.max.botapi.model.ContactAttachmentRequestPayload;
-import ru.max.botapi.model.FailByDefaultAttachmentVisitor;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequest;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequestPayload;
-import ru.max.botapi.model.Message;
-import ru.max.botapi.model.MessageBody;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.PhotoAttachmentRequest;
-import ru.max.botapi.model.PhotoAttachmentRequestPayload;
-import ru.max.botapi.model.PhotoTokens;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.ShareAttachment;
-import ru.max.botapi.model.ShareAttachmentPayload;
-import ru.max.botapi.model.ShareAttachmentRequest;
-import ru.max.botapi.model.SimpleQueryResult;
-import ru.max.botapi.model.UploadType;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-@Category(IntegrationTest.class)
+@Tag("IntegrationTest")
 public class EditMessageQueryIntegrationTest extends MaxIntegrationTest {
     private AttachmentRequest photoAR;
     private AttachmentRequest photoAR2;
     private List<Chat> chats;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         String uploadUrl = getUploadUrl(UploadType.IMAGE);
         File file = new File(getClass().getClassLoader().getResource("test.png").toURI());

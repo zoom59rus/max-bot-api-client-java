@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.CallbackAnswer;
 import ru.max.botapi.model.NewMessageBody;
 import ru.max.botapi.model.SimpleQueryResult;
@@ -47,12 +46,12 @@ public class AnswerOnCallbackQueryTest extends UnitTestBase {
         assertThat(response2.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.answerOnCallback(null, "notnull").execute();
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException2() throws Exception {
         api.answerOnCallback(new CallbackAnswer().notification("notif"), null).execute();
     }

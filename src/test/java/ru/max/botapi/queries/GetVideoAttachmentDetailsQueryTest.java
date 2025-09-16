@@ -20,13 +20,13 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.VideoAttachmentDetails;
 import ru.max.botapi.model.VideoUrls;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 
 public class GetVideoAttachmentDetailsQueryTest extends MaxQueryTest {
     @Test

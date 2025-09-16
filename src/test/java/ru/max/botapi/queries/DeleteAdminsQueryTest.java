@@ -20,18 +20,11 @@
 
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.SimpleQueryResult;
-import org.junit.Test;
-import org.junit.Ignore;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.fail;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class DeleteAdminsQueryTest extends MaxQueryTest {
     

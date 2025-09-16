@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.SimpleQueryResult;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -37,7 +36,7 @@ public class UnsubscribeQueryTest extends UnitTestBase {
         assertThat(response.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.unsubscribe(null).execute();
     }

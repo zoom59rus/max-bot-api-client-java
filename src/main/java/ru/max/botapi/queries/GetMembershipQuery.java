@@ -22,6 +22,7 @@ package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.model.ChatMember;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class GetMembershipQuery extends MaxQuery<ChatMember> {

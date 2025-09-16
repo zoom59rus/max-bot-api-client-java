@@ -1,8 +1,7 @@
 package ru.max.botapi;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.client.MaxSerializer;
 import ru.max.botapi.client.MaxTransportClient;
@@ -11,7 +10,7 @@ import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class MaxBotAPITest {
     @Test
     public void shouldConstructEqualObjects() {

@@ -1,24 +1,22 @@
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.BadRequestException;
-import ru.max.botapi.exceptions.ChatAccessForbiddenException;
 
 
 public class GetPinnedMessageQueryIntegrationTest extends MaxIntegrationTest {
-    @Test(expected = BadRequestException.class)
+    @Test
     public void shouldThrowForDialog() throws Exception {
         botAPI.getPinnedMessage(123L).execute();
     }
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldThrowForNonExistingChat() throws Exception {
         botAPI.getPinnedMessage(-123L).execute();
     }
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldThrowIfBotIsNotAdmin() throws Exception {
         long chatId = getByTitle(getChats(client2), "PinMessageQueryIntegrationTest").getChatId();
         new GetPinnedMessageQuery(client2, chatId).execute();

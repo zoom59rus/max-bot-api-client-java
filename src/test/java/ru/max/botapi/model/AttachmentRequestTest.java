@@ -1,16 +1,14 @@
 package ru.max.botapi.model;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
-import ru.max.botapi.UnitTest;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class AttachmentRequestTest {
     @Test
     public void shouldVisitDefault() {

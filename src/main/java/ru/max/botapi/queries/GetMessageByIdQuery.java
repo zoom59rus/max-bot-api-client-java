@@ -22,6 +22,7 @@ package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.model.Message;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class GetMessageByIdQuery extends MaxQuery<Message> {

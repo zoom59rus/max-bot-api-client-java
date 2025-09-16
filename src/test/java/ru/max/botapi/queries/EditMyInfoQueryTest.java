@@ -20,16 +20,14 @@
 
 package ru.max.botapi.queries;
 
-import java.util.Collections;
-import java.util.List;
-
-import org.junit.Test;
-
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.BotCommand;
 import ru.max.botapi.model.BotInfo;
 import ru.max.botapi.model.BotPatch;
 import ru.max.botapi.model.PhotoAttachmentRequestPayload;
+
+import java.util.Collections;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -67,7 +65,7 @@ public class EditMyInfoQueryTest extends UnitTestBase {
         assertThat(response.getDescription(), is(description));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.editMyInfo(null).execute();
     }

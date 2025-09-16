@@ -21,7 +21,11 @@
 package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
-import ru.max.botapi.model.MessageList;import java.util.Set;import java.util.Collection;
+import ru.max.botapi.model.MessageList;
+
+import java.util.Collection;
+import java.util.Set;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class GetMessagesQuery extends MaxQuery<MessageList> {

@@ -1,14 +1,9 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.model.*;
+
 import java.util.concurrent.CountDownLatch;
-
-import org.junit.Test;
-
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.FailByDefaultUpdateVisitor;
-import ru.max.botapi.model.User;
-import ru.max.botapi.model.UserAddedToChatUpdate;
-import ru.max.botapi.model.UserRemovedFromChatUpdate;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

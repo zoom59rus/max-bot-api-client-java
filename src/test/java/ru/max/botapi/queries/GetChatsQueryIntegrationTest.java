@@ -1,18 +1,15 @@
 package ru.max.botapi.queries;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatList;
 import ru.max.botapi.model.ChatStatus;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.isEmptyString;

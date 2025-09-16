@@ -1,12 +1,11 @@
 package ru.max.botapi.queries;
 
-import java.util.concurrent.CountDownLatch;
-
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.model.BotStartedUpdate;
 import ru.max.botapi.model.FailByDefaultUpdateVisitor;
+
+import java.util.concurrent.CountDownLatch;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

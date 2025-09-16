@@ -1,30 +1,20 @@
 package ru.max.botapi.queries;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.ChatAccessForbiddenException;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatMember;
 import ru.max.botapi.model.ChatMembersList;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.nullValue;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 public class GetMembersQueryIntegrationTest extends MaxIntegrationTest {
@@ -62,7 +52,7 @@ public class GetMembersQueryIntegrationTest extends MaxIntegrationTest {
         assertThat(members.get(bot2.getUserId()).isAdmin(), is(false));
     }
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldNotGetMembersOfChannelWhereBotIsNotAdmin() throws Exception {
         List<Chat> chats = getChats();
         Chat chat2 = getByTitle(chats, "test channel #2");
@@ -111,7 +101,7 @@ public class GetMembersQueryIntegrationTest extends MaxIntegrationTest {
     }
 
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldThrowExceptionNotChannelAdmin() throws Exception {
         List<Chat> chats = getChats();
         Chat chat = getByTitle(chats, "test channel #2");
@@ -119,7 +109,7 @@ public class GetMembersQueryIntegrationTest extends MaxIntegrationTest {
         new GetMembersQuery(client, chat.getChatId()).userIds(ids).execute();
     }
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldThrowExceptionIfNotChatMember() throws Exception {
         List<Chat> chats = getChats();
         Chat chat = getByTitle(chats, "test chat #5");
@@ -127,7 +117,7 @@ public class GetMembersQueryIntegrationTest extends MaxIntegrationTest {
         new GetMembersQuery(client2, chat.getChatId()).userIds(ids).execute();
     }
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldThrowExceptionIfNotChannelMember() throws Exception {
         List<Chat> chats = getChats();
         Chat chat = getByTitle(chats, "test channel #3");

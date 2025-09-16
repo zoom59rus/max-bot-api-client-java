@@ -21,7 +21,9 @@
 package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
-import ru.max.botapi.model.SimpleQueryResult;import ru.max.botapi.model.UserIdsList;
+import ru.max.botapi.model.SimpleQueryResult;
+import ru.max.botapi.model.UserIdsList;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class AddMembersQuery extends MaxQuery<SimpleQueryResult> {

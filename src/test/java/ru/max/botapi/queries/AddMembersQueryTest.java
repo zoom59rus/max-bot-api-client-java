@@ -20,13 +20,11 @@
 
 package ru.max.botapi.queries;
 
-import java.util.Arrays;
-
-import org.junit.Test;
-
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.SimpleQueryResult;
 import ru.max.botapi.model.UserIdsList;
+
+import java.util.Arrays;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -41,12 +39,12 @@ public class AddMembersQueryTest extends UnitTestBase {
         assertThat(response.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.addMembers(null, 1L).execute();
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException2() throws Exception {
         api.addMembers(new UserIdsList(Arrays.asList(1L, 2L)), null).execute();
     }

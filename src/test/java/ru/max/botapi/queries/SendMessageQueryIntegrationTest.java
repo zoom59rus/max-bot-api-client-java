@@ -1,5 +1,10 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.exceptions.APIException;
+import ru.max.botapi.model.*;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,50 +12,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.AudioAttachment;
-import ru.max.botapi.model.AudioAttachmentRequest;
-import ru.max.botapi.model.Button;
-import ru.max.botapi.model.CallbackButton;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatButton;
-import ru.max.botapi.model.ChatType;
-import ru.max.botapi.model.ContactAttachmentRequest;
-import ru.max.botapi.model.ContactAttachmentRequestPayload;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequest;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequestPayload;
-import ru.max.botapi.model.Intent;
-import ru.max.botapi.model.LinkButton;
-import ru.max.botapi.model.Message;
-import ru.max.botapi.model.MessageLinkType;
-import ru.max.botapi.model.MessageList;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.NewMessageLink;
-import ru.max.botapi.model.PhotoAttachment;
-import ru.max.botapi.model.PhotoAttachmentRequest;
-import ru.max.botapi.model.PhotoAttachmentRequestPayload;
-import ru.max.botapi.model.RequestContactButton;
-import ru.max.botapi.model.RequestGeoLocationButton;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.ShareAttachment;
-import ru.max.botapi.model.StickerAttachment;
-import ru.max.botapi.model.StickerAttachmentRequest;
-import ru.max.botapi.model.StickerAttachmentRequestPayload;
-import ru.max.botapi.model.UploadType;
-import ru.max.botapi.model.UploadedInfo;
-import ru.max.botapi.model.UserWithPhoto;
-
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 public class SendMessageQueryIntegrationTest extends MaxIntegrationTest {

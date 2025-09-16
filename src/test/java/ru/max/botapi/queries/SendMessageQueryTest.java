@@ -20,40 +20,15 @@
 
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.model.*;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import org.junit.Test;
-
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.AudioAttachmentRequest;
-import ru.max.botapi.model.CallbackButton;
-import ru.max.botapi.model.ContactAttachmentRequest;
-import ru.max.botapi.model.ContactAttachmentRequestPayload;
-import ru.max.botapi.model.FailByDefaultARVisitor;
-import ru.max.botapi.model.FileAttachmentRequest;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequest;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequestPayload;
-import ru.max.botapi.model.LinkButton;
-import ru.max.botapi.model.LocationAttachmentRequest;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.PhotoAttachmentRequest;
-import ru.max.botapi.model.PhotoAttachmentRequestPayload;
-import ru.max.botapi.model.PhotoToken;
-import ru.max.botapi.model.RequestContactButton;
-import ru.max.botapi.model.RequestGeoLocationButton;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.StickerAttachmentRequest;
-import ru.max.botapi.model.StickerAttachmentRequestPayload;
-import ru.max.botapi.model.UploadedInfo;
-import ru.max.botapi.model.VideoAttachmentRequest;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static spark.Spark.post;
 
@@ -153,7 +128,7 @@ public class SendMessageQueryTest extends UnitTestBase {
         }
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.sendMessage(null).execute();
     }

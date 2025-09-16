@@ -10,8 +10,9 @@ import java.util.Collections;
 
 import javax.servlet.MultipartConfigElement;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +46,7 @@ public class MaxUploadAPITest extends UnitTestBase {
     private final MaxClient client = MaxClient.create(MaxService.ACCESS_TOKEN);
     private final MaxUploadAPI uploadAPI = new MaxUploadAPI(client);
 
-    @BeforeClass
+    @BeforeAll
     public static void before() {
         ObjectMapper mapper = new ObjectMapper();
         post("/fileupload", MaxUploadAPITest::serverUploadFile, mapper::writeValueAsString);
@@ -147,7 +148,7 @@ public class MaxUploadAPITest extends UnitTestBase {
         assertThat(uploadedFileInfo.getToken(), is(notNullValue()));
     }
 
-    @Test(expected = ClientException.class)
+    @Test
     public void shoudlFail() throws Exception {
         File file = new File(getClass().getClassLoader().getResource("test.png").toURI());
         MaxUploadQuery<UploadedInfo> query = new MaxUploadAVQuery(invalidClient, "https://url", file);

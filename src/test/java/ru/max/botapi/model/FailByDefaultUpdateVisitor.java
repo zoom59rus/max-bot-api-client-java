@@ -1,7 +1,6 @@
 package ru.max.botapi.model;
 
-import org.junit.Assert;
-
+import org.junit.jupiter.api.Assertions;
 import ru.max.botapi.TestBot;
 
 
@@ -74,6 +73,6 @@ public class FailByDefaultUpdateVisitor implements Update.Visitor {
 
     private void fail(Update update) {
         testBot.sendToMaster("Unexpected update in test " + update);
-        Assert.fail("Should not happens");
+        Assertions.fail("Should not happens");
     }
 }

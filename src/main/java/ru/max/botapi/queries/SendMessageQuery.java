@@ -21,7 +21,9 @@
 package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
-import ru.max.botapi.model.NewMessageBody;import ru.max.botapi.model.SendMessageResult;
+import ru.max.botapi.model.NewMessageBody;
+import ru.max.botapi.model.SendMessageResult;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class SendMessageQuery extends MaxQuery<SendMessageResult> {

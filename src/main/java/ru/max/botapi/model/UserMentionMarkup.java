@@ -22,11 +22,10 @@ package ru.max.botapi.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Objects;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import org.jetbrains.annotations.Nullable;
+
+import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * Represents user mention in text. Mention can be both by user&#39;s username or ID if user doesn&#39;t have username

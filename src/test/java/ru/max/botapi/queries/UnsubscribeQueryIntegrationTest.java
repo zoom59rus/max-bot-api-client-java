@@ -1,14 +1,12 @@
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.model.SimpleQueryResult;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.*;
 
 
 public class UnsubscribeQueryIntegrationTest extends MaxIntegrationTest {

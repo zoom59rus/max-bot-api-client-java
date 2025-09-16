@@ -1,16 +1,18 @@
 package ru.max.botapi.model;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
-import ru.max.botapi.UnitTest;
+
+
+
+
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class MaxEnumTest {
     @Test
     public void shouldCreate() {

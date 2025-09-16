@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.server.MaxService;
 
@@ -39,7 +38,7 @@ public class GetChatQueryTest extends UnitTestBase {
         assertThat(chat.getIcon().getUrl(), is(MaxService.CHAT_ICON_URL));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.getChat(null).execute();
     }

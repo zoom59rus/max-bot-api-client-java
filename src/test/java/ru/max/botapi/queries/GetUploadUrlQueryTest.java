@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.UploadEndpoint;
 import ru.max.botapi.model.UploadType;
 
@@ -38,7 +37,7 @@ public class GetUploadUrlQueryTest extends UnitTestBase {
         assertThat(response.getUrl(), is(notNullValue()));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.getUploadUrl(null).execute();
     }

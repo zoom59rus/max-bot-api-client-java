@@ -1,13 +1,12 @@
 package ru.max.botapi.queries;
 
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatMember;
+
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;

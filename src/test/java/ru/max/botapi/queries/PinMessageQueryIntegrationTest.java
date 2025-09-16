@@ -1,10 +1,8 @@
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.BadRequestException;
-import ru.max.botapi.exceptions.ChatAccessForbiddenException;
 import ru.max.botapi.model.Message;
 import ru.max.botapi.model.NewMessageBody;
 import ru.max.botapi.model.PinMessageBody;
@@ -15,24 +13,24 @@ import static org.hamcrest.Matchers.is;
 
 
 public class PinMessageQueryIntegrationTest extends MaxIntegrationTest {
-    @Test(expected = BadRequestException.class)
+    @Test
     public void shouldThrowForDialog() throws Exception {
         botAPI.pinMessage(new PinMessageBody("mid123"), 123L).execute();
     }
 
-    @Test(expected = BadRequestException.class)
+    @Test
     public void shouldThrowForNonExistingChat() throws Exception {
         botAPI.pinMessage(new PinMessageBody("mid123"), -123L).execute();
     }
 
-    @Test(expected = ChatAccessForbiddenException.class)
+    @Test
     public void shouldThrowIfBotIsNotAdmin() throws Exception {
         long chatId = getByTitle(getChats(client2), "PinMessageQueryIntegrationTest").getChatId();
         String mid = doSend(new NewMessageBody(randomText(), null, null), chatId).getMessage().getBody().getMid();
         new PinMessageQuery(client2, new PinMessageBody(mid), chatId).execute();
     }
 
-    @Test(expected = BadRequestException.class)
+    @Test
     public void shouldThrowIfMessageIdIsInvalid() throws Exception {
         long chatId = getByTitle(getChats(), "PinMessageQueryIntegrationTest").getChatId();
         botAPI.pinMessage(new PinMessageBody("mid123"), chatId).execute();

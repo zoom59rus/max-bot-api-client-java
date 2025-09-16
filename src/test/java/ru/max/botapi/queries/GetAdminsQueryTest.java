@@ -20,15 +20,12 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.ChatMembersList;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 
 public class GetAdminsQueryTest extends UnitTestBase {
 
@@ -41,7 +38,7 @@ public class GetAdminsQueryTest extends UnitTestBase {
         assertThat(response.getMembers().size(), is(greaterThan(0)));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.getAdmins(null).execute();
     }

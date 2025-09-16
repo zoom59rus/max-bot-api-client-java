@@ -1,12 +1,7 @@
 package ru.max.botapi.queries;
 
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.atomic.AtomicLong;
-
-import org.junit.experimental.categories.Category;
-
+import org.junit.jupiter.api.Tag;
 import ru.max.botapi.MaxBotAPI;
-import ru.max.botapi.UnitTest;
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.client.impl.JacksonSerializer;
 import ru.max.botapi.client.impl.OkHttpTransportClient;
@@ -15,8 +10,11 @@ import ru.max.botapi.model.ChatList;
 import ru.max.botapi.server.MaxServer;
 import ru.max.botapi.server.MaxService;
 
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicLong;
 
-@Category(UnitTest.class)
+
+@Tag("UnitTest")
 public class UnitTestBase extends MaxService {
     protected static final AtomicLong ID_COUNTER = new AtomicLong();
 

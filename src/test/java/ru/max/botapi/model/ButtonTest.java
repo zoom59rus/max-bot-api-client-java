@@ -1,19 +1,17 @@
 package ru.max.botapi.model;
 
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
-import ru.max.botapi.UnitTest;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class ButtonTest {
     @Test
     public void shouldVisitDefault() {

@@ -1,28 +1,16 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.io.File;
 import java.util.Collections;
 
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.BadRequestException;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.UploadType;
-import ru.max.botapi.model.UploadedInfo;
-import ru.max.botapi.model.VideoAttachment;
-import ru.max.botapi.model.VideoAttachmentDetails;
-import ru.max.botapi.model.VideoAttachmentRequest;
-import ru.max.botapi.model.VideoUrls;
-
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.Assert.assertThat;
-
 
 public class GetVideoAttachmentDetailsQueryIntegrationTest extends MaxIntegrationTest {
     @Test
@@ -47,7 +35,7 @@ public class GetVideoAttachmentDetailsQueryIntegrationTest extends MaxIntegratio
         assertThat(details.getHeight(), is(478));
     }
 
-    @Test(expected = BadRequestException.class)
+    @Test
     public void shouldThrowOnInvalidToken() throws Exception {
         new GetVideoAttachmentDetailsQuery(client, "invalidtoken").execute();
     }

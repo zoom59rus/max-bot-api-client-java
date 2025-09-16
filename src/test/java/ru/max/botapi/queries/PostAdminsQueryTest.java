@@ -20,17 +20,17 @@
 
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.ChatAdmin;
 import ru.max.botapi.model.ChatAdminPermission;
 import ru.max.botapi.model.ChatAdminsList;
 import ru.max.botapi.model.SimpleQueryResult;
-import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 import java.util.Collections;
 import java.util.EnumSet;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 public class PostAdminsQueryTest extends MaxQueryTest {
     

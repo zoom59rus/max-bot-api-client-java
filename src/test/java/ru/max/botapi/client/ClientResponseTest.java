@@ -1,19 +1,17 @@
 package ru.max.botapi.client;
 
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
 import java.util.Collections;
 import java.util.Map;
-
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
-import ru.max.botapi.UnitTest;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class ClientResponseTest {
     @Test
     public void shouldReturnHeaders() {

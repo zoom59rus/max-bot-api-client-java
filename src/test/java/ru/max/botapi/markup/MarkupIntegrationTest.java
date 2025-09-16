@@ -1,28 +1,15 @@
 package ru.max.botapi.markup;
 
+import org.apache.commons.io.IOUtils;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
-
-import org.apache.commons.io.IOUtils;
-import org.junit.Before;
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatType;
-import ru.max.botapi.model.EmphasizedMarkup;
-import ru.max.botapi.model.HighlightedMarkup;
-import ru.max.botapi.model.LinkMarkup;
-import ru.max.botapi.model.MarkupElement;
-import ru.max.botapi.model.Message;
-import ru.max.botapi.model.MonospacedMarkup;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.StrongMarkup;
-import ru.max.botapi.model.TextFormat;
-import ru.max.botapi.model.UserMentionMarkup;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
@@ -36,7 +23,7 @@ public class MarkupIntegrationTest extends MaxIntegrationTest {
     private List<MarkupElement> expectedMarkup;
     private List<MarkupElement> expectedDialogMarkup;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         chat = getByTitle(getChats(), "SendMarkupIntegrationTest");
         dialog = getByType(getChats(), ChatType.DIALOG);

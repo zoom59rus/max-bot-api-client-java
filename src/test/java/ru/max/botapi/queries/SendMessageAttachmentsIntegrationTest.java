@@ -1,29 +1,18 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.exceptions.APIException;
+import ru.max.botapi.model.*;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.Button;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.FileAttachmentRequest;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequest;
-import ru.max.botapi.model.InlineKeyboardAttachmentRequestPayload;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.RequestGeoLocationButton;
-import ru.max.botapi.model.UploadEndpoint;
-import ru.max.botapi.model.UploadType;
-import ru.max.botapi.model.UploadedInfo;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 public class SendMessageAttachmentsIntegrationTest extends MaxIntegrationTest {

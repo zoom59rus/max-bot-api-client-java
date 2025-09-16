@@ -21,7 +21,9 @@
 package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
-import ru.max.botapi.model.SimpleQueryResult;import ru.max.botapi.model.SubscriptionRequestBody;
+import ru.max.botapi.model.SimpleQueryResult;
+import ru.max.botapi.model.SubscriptionRequestBody;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class SubscribeQuery extends MaxQuery<SimpleQueryResult> {

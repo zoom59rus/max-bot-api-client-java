@@ -22,6 +22,7 @@ package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.model.VideoAttachmentDetails;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class GetVideoAttachmentDetailsQuery extends MaxQuery<VideoAttachmentDetails> {

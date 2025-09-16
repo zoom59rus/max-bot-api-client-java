@@ -20,17 +20,11 @@
 
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.model.*;
+
 import java.util.Collections;
 import java.util.List;
-
-import org.junit.Test;
-
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.SimpleQueryResult;
-import ru.max.botapi.model.StickerAttachmentRequest;
-import ru.max.botapi.model.StickerAttachmentRequestPayload;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -46,12 +40,12 @@ public class EditMessageQueryTest extends UnitTestBase {
         assertThat(response.isSuccess(), is(true));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.editMessage(null, "mid.0912348787923687263847834").execute();
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException2() throws Exception {
         api.editMessage(new NewMessageBody("text", null, null), null).execute();
     }

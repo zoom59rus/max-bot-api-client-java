@@ -1,26 +1,21 @@
 package ru.max.botapi.queries;
 
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatPatch;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.PhotoAttachmentRequestPayload;
-import ru.max.botapi.model.SendMessageResult;
+import ru.max.botapi.model.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 public class EditChatQueryItegrationTest extends MaxIntegrationTest {
 
     Chat chat;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         chat = getByTitle(getChats(client), "EditChatQueryItegrationTest");
     }

@@ -20,8 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.GetPinnedMessageResult;
 
 import static org.hamcrest.CoreMatchers.nullValue;

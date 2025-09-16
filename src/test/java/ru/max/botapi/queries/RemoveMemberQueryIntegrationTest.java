@@ -1,22 +1,19 @@
 package ru.max.botapi.queries;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.hamcrest.Matcher;
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatMember;
 import ru.max.botapi.model.SimpleQueryResult;
 import ru.max.botapi.model.UserIdsList;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.*;
 
 
 public class RemoveMemberQueryIntegrationTest extends MaxIntegrationTest {

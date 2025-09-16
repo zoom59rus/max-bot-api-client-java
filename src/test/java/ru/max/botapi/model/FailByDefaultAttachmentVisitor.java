@@ -1,6 +1,6 @@
 package ru.max.botapi.model;
 
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.fail;
 
 
 public class FailByDefaultAttachmentVisitor implements Attachment.Visitor {

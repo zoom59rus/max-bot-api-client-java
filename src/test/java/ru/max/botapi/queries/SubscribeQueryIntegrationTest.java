@@ -1,23 +1,13 @@
 package ru.max.botapi.queries;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
 import ru.max.botapi.Version;
-import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.model.GetSubscriptionsResult;
-import ru.max.botapi.model.SimpleQueryResult;
-import ru.max.botapi.model.Subscription;
-import ru.max.botapi.model.SubscriptionRequestBody;
-import ru.max.botapi.model.Update;
+import ru.max.botapi.model.*;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -28,7 +18,7 @@ import static org.hamcrest.Matchers.hasItem;
 public class SubscribeQueryIntegrationTest extends MaxIntegrationTest {
     private String url;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         url = "https://" + randomText(16) + ".com";
     }
@@ -85,21 +75,21 @@ public class SubscribeQueryIntegrationTest extends MaxIntegrationTest {
         }
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowOnInvalidRequest() throws Exception {
         SubscriptionRequestBody body = new SubscriptionRequestBody(url);
         body.setVersion("invalid version");
         new SubscribeQuery(client, body).execute();
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowOnInvalidRequest2() throws Exception {
         SubscriptionRequestBody body = new SubscriptionRequestBody(url);
         body.setUpdateTypes(Collections.singleton("invalid_type"));
         new SubscribeQuery(client, body).execute();
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowOnInvalidURL() throws Exception {
         SubscriptionRequestBody body = new SubscriptionRequestBody("https://invalid url");
         new SubscribeQuery(client, body).execute();

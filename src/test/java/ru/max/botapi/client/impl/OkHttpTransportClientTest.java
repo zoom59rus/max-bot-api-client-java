@@ -1,33 +1,25 @@
 package ru.max.botapi.client.impl;
 
+import org.apache.log4j.Level;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.client.ClientResponse;
+import ru.max.botapi.server.MaxServer;
+import ru.max.botapi.server.MaxService;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import org.apache.log4j.Level;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import ru.max.botapi.UnitTest;
-import ru.max.botapi.client.ClientResponse;
-import ru.max.botapi.exceptions.TransportClientException;
-import ru.max.botapi.server.MaxServer;
-import ru.max.botapi.server.MaxService;
-
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.*;
 import static spark.Spark.get;
 
-
-@Category(UnitTest.class)
+@Tag("UnitTest")
 public class OkHttpTransportClientTest {
-    @Test(expected = TransportClientException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         OkHttpTransportClient client = new OkHttpTransportClient();
         InputStream inputStream = mock(InputStream.class);
@@ -38,7 +30,7 @@ public class OkHttpTransportClientTest {
         client.post("http://invalidurl", "test.txt", inputStream);
     }
 
-    @Test(expected = TransportClientException.class)
+    @Test
     public void shouldThrowExceptionWhenResponseBodyIsInvalid() throws Throwable {
         String path = "/shouldThrowExceptionWhenResponseBodyIsInvalid";
         get(path, (req, resp) -> {

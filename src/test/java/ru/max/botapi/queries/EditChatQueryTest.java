@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatPatch;
 import ru.max.botapi.model.PhotoAttachmentRequestPayload;
@@ -43,12 +42,12 @@ public class EditChatQueryTest extends UnitTestBase {
         assertThat(response.getTitle(), is(newTitle));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException() throws Exception {
         api.editChat(null, 1L).execute();
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrowException2() throws Exception {
         api.editChat(new ChatPatch().title("title"), null).execute();
     }

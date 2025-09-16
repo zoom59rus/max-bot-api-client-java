@@ -20,10 +20,10 @@
 
 package ru.max.botapi.queries;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collection;
 import java.util.stream.Collectors;
-
-import org.jetbrains.annotations.NotNull;
 
 public class CollectionQueryParam<T> extends QueryParam<Collection<T>> {
     public CollectionQueryParam(@NotNull String name, @NotNull MaxQuery<?> holder) {

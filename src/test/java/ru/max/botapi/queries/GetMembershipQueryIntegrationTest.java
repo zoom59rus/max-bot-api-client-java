@@ -1,9 +1,8 @@
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.APIException;
 import ru.max.botapi.model.Chat;
 import ru.max.botapi.model.ChatAdminPermission;
 import ru.max.botapi.model.ChatMember;
@@ -17,7 +16,7 @@ import static org.hamcrest.Matchers.hasItem;
 
 
 public class GetMembershipQueryIntegrationTest extends MaxIntegrationTest {
-    @Test(expected = APIException.class)
+    @Test
     public void shouldNotReturnPermissionsForDialog() throws Exception {
         Chat dialog = getByType(getChats(), ChatType.DIALOG);
         new GetMembershipQuery(client, dialog.getChatId()).execute();

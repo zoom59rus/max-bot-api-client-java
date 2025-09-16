@@ -20,6 +20,9 @@
 
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.model.*;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -27,28 +30,6 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import org.junit.Test;
-
-import ru.max.botapi.model.Attachment;
-import ru.max.botapi.model.AudioAttachment;
-import ru.max.botapi.model.Button;
-import ru.max.botapi.model.CallbackButton;
-import ru.max.botapi.model.ContactAttachment;
-import ru.max.botapi.model.FailByDefaultAttachmentVisitor;
-import ru.max.botapi.model.FailByDefaultButtonVisitor;
-import ru.max.botapi.model.FileAttachment;
-import ru.max.botapi.model.InlineKeyboardAttachment;
-import ru.max.botapi.model.LinkButton;
-import ru.max.botapi.model.LocationAttachment;
-import ru.max.botapi.model.Message;
-import ru.max.botapi.model.MessageList;
-import ru.max.botapi.model.PhotoAttachment;
-import ru.max.botapi.model.RequestContactButton;
-import ru.max.botapi.model.RequestGeoLocationButton;
-import ru.max.botapi.model.ShareAttachment;
-import ru.max.botapi.model.StickerAttachment;
-import ru.max.botapi.model.VideoAttachment;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

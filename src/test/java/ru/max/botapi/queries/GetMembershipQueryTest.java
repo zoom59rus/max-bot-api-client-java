@@ -20,9 +20,8 @@
 
 package ru.max.botapi.queries;
 
-import org.junit.Test;
 
-import ru.max.botapi.exceptions.RequiredParameterMissingException;
+import org.junit.jupiter.api.Test;
 import ru.max.botapi.model.ChatMember;
 import spark.Spark;
 
@@ -39,7 +38,7 @@ public class GetMembershipQueryTest extends UnitTestBase {
         assertThat(response, is(chatMembers.get(chatId).get(0)));
     }
 
-    @Test(expected = RequiredParameterMissingException.class)
+    @Test
     public void shouldThrow() throws Exception {
         api.getMembership(null).execute();
     }

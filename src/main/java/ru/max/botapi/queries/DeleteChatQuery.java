@@ -22,6 +22,7 @@ package ru.max.botapi.queries;
 
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.model.SimpleQueryResult;
+
 import static ru.max.botapi.client.MaxTransportClient.Method;
 
 public class DeleteChatQuery extends MaxQuery<SimpleQueryResult> {

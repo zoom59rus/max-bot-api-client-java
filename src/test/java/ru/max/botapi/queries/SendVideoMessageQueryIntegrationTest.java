@@ -1,23 +1,14 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.model.AttachmentRequest;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.Message;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.UploadEndpoint;
-import ru.max.botapi.model.UploadType;
-import ru.max.botapi.model.UploadedInfo;
-import ru.max.botapi.model.VideoAttachment;
-import ru.max.botapi.model.VideoAttachmentRequest;
 
 
 public class SendVideoMessageQueryIntegrationTest extends MaxIntegrationTest {

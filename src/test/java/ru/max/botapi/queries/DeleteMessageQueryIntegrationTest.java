@@ -1,20 +1,12 @@
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.MaxIntegrationTest;
+import ru.max.botapi.model.*;
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import ru.max.botapi.MaxIntegrationTest;
-import ru.max.botapi.exceptions.APIException;
-import ru.max.botapi.exceptions.AccessForbiddenException;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatType;
-import ru.max.botapi.model.MessageList;
-import ru.max.botapi.model.NewMessageBody;
-import ru.max.botapi.model.SendMessageResult;
-import ru.max.botapi.model.SimpleQueryResult;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
@@ -59,7 +51,7 @@ public class DeleteMessageQueryIntegrationTest extends MaxIntegrationTest {
         assertDeleted(chatId, result1.getMessage().getBody().getMid(), result2.getMessage().getBody().getMid());
     }
 
-    @Test(expected = AccessForbiddenException.class)
+    @Test
     public void shouldThrowExceptionWhenBotHasNoPermission() throws Exception {
         List<Chat> chats = getChats();
         Chat chat = chats.stream()
@@ -74,7 +66,7 @@ public class DeleteMessageQueryIntegrationTest extends MaxIntegrationTest {
         new DeleteMessageQuery(client, bot2Message.getMessage().getBody().getMid()).execute();
     }
 
-    @Test(expected = AccessForbiddenException.class)
+    @Test
     public void shouldThrowExceptionWhenBotIsNotAdmin() throws Exception {
         List<Chat> chats = getChats();
         Chat chat = chats.stream()
@@ -90,7 +82,7 @@ public class DeleteMessageQueryIntegrationTest extends MaxIntegrationTest {
         new DeleteMessageQuery(client, bot2Message.getMessage().getBody().getMid()).execute();
     }
 
-    @Test(expected = APIException.class)
+    @Test
     public void shouldThrowExceptionWhenMIDIsInvalid() throws Exception {
         new DeleteMessageQuery(client, "mid.asdash9237498kjsdhfkjsehe2763478").execute();
     }

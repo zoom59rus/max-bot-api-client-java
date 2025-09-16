@@ -20,30 +20,13 @@
 
 package ru.max.botapi.queries;
 
+import org.junit.jupiter.api.Test;
+import ru.max.botapi.TestBot;
+import ru.max.botapi.model.*;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-
-import org.junit.Test;
-
-import ru.max.botapi.TestBot;
-import ru.max.botapi.model.BotAddedToChatUpdate;
-import ru.max.botapi.model.BotRemovedFromChatUpdate;
-import ru.max.botapi.model.BotStartedUpdate;
-import ru.max.botapi.model.Callback;
-import ru.max.botapi.model.Chat;
-import ru.max.botapi.model.ChatTitleChangedUpdate;
-import ru.max.botapi.model.FailByDefaultUpdateVisitor;
-import ru.max.botapi.model.MessageCallbackUpdate;
-import ru.max.botapi.model.MessageChatCreatedUpdate;
-import ru.max.botapi.model.MessageCreatedUpdate;
-import ru.max.botapi.model.MessageEditedUpdate;
-import ru.max.botapi.model.MessageRemovedUpdate;
-import ru.max.botapi.model.Update;
-import ru.max.botapi.model.UpdateList;
-import ru.max.botapi.model.User;
-import ru.max.botapi.model.UserAddedToChatUpdate;
-import ru.max.botapi.model.UserRemovedFromChatUpdate;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

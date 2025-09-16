@@ -20,15 +20,15 @@
 
 package ru.max.botapi;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-
 import ru.max.botapi.client.MaxClient;
 import ru.max.botapi.queries.upload.MaxUploadAVQuery;
 import ru.max.botapi.queries.upload.MaxUploadFileQuery;
 import ru.max.botapi.queries.upload.MaxUploadImageQuery;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class MaxUploadAPI {
     private final MaxClient client;
